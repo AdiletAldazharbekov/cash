@@ -109,7 +109,7 @@ export default function EditInvoiceForm({
                   htmlFor="pending"
                   className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600"
                 >
-                  Ожидает оплату <ClockIcon className="h-4 w-4" />
+                  Пауза <ClockIcon className="h-4 w-4" />
                 </label>
               </div>
               <div className="flex items-center">
@@ -139,7 +139,7 @@ export default function EditInvoiceForm({
         >
           Отмена
         </Link>
-        <Button type="submit">Корректировать ордер</Button>
+        <Button type="submit">Сохранить</Button>
       </div>
     </form>
   );

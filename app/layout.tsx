@@ -1,15 +1,14 @@
 import '@/app/ui/global.css';
-import { inter } from '@/app/ui/fonts';
+import { montserrat } from '@/app/ui/fonts';
 
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Exacom',
-    default: 'Exacom Soft',
+    template: '%s | AFinA',
+    default: 'AFinA',
   },
-  description: 'The official Next.js Learn Dashboard built with App Router.',
-  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+  description: 'Демо версия приложения для учета кредитов в Ломбардах',
 };
 
 export default function RootLayout({
@@ -19,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${montserrat.className} antialiased`}>{children}</body>
     </html>
   );
 }

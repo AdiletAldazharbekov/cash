@@ -5,7 +5,7 @@ import { updateInvoice } from '@/app/lib/actions';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 export const metadata: Metadata = {
-  title: 'Edit invoice',
+  title: 'Edit loan',
 };
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -23,9 +23,9 @@ export default async function Page({ params }: { params: { id: string } }) {
     <main>
       <Breadcrumbs
         breadcrumbs={[
-          { label: 'Invoices', href: '/dashboard/invoices' },
+          { label: 'Кредиты', href: '/dashboard/invoices' },
           {
-            label: 'Edit Invoice',
+            label: 'Изменить кредит',
             href: `/dashboard/invoices/${id}/edit`,
             active: true,
           },
