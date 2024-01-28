@@ -11,7 +11,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
   const handleSearch = useDebouncedCallback((term) => {
     // function handleSearch(term: string) {
-    console.log(`Searching... ${term}`);
+    console.log(`Поиск... ${term}`);
     const params = new URLSearchParams(searchParams);
     params.set('page', '1');
     if (term) {
@@ -20,7 +20,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
       params.delete('query');
     }
     replace(`${pathname}?${params.toString()}`);
-  }, 1000);
+  }, 700);
 
   return (
     <div className="relative flex flex-1 flex-shrink-0">
