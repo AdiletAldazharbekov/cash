@@ -4,6 +4,7 @@ import {
   UserGroupIcon,
   HomeIcon,
   DocumentDuplicateIcon,
+  BuildingOffice2Icon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -22,7 +23,7 @@ export const links = [
   // { name: 'Залоги', href: '/guatartees', icon: UserGroupIcon },
   // { name: 'Журнал операций', href: '/operations', icon: UserGroupIcon },
   // { name: 'Отчеты', href: '/reports', icon: UserGroupIcon },
-  { name: 'Филиалы', href: '/departments', icon: UserGroupIcon },
+  { name: 'Филиалы', href: '/departments', icon: BuildingOffice2Icon },
   // { name: 'Сотрудники', href: '/employees', icon: UserGroupIcon },
   // { name: 'Продукты', href: '/products', icon: UserGroupIcon },
   // { name: 'Таблицы БД', href: '/tables', icon: UserGroupIcon },
