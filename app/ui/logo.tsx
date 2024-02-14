@@ -1,7 +1,7 @@
 import { GlobeAltIcon } from '@heroicons/react/24/outline';
 import { lusitana, montserrat } from '@/app/ui/fonts';
 
-export default function AcmeLogo() {
+export default function Logo() {
   return (
     <div
       className={`${montserrat.className} flex flex-row items-center leading-none text-white`}
