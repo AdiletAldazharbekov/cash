@@ -1,5 +1,4 @@
 'use client';
-
 import {
   UserGroupIcon,
   HomeIcon,
@@ -9,29 +8,35 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+
+import { useContext } from 'react';
+import { TitleContext } from '@/app/context/TitleContext.js';
+
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 export const links = [
-  { name: 'Главная', href: '/', icon: HomeIcon },
-  { name: 'Клиенты', href: '/customers', icon: UserGroupIcon },
-  {
-    name: 'Кредиты',
-    href: '/invoices',
-    icon: DocumentDuplicateIcon,
-  },
-  { name: 'Филиалы', href: '/departments', icon: BuildingOffice2Icon },
-  // { name: 'Журнал операций', href: '/operations', icon: UserGroupIcon },
-  // { name: 'Отчеты', href: '/reports', icon: UserGroupIcon },
-  // { name: 'Залоги', href: '/guatartees', icon: UserGroupIcon },
-  // { name: 'Сотрудники', href: '/employees', icon: UserGroupIcon },
-  // { name: 'Продукты', href: '/products', icon: UserGroupIcon },
-  // { name: 'Таблицы БД', href: '/tables', icon: UserGroupIcon },
-  // { name: 'Академия', href: '/academy', icon: UserGroupIcon },
-  // { name: 'Настройки', href: '/settings', icon: UserGroupIcon },
+  { name: 'Главная', href: '/home', icon: HomeIcon },
+  { name: 'Клиенты', href: '/home/customers', icon: UserGroupIcon },
+  { name: 'Кредиты', href: '/home/invoices', icon: DocumentDuplicateIcon },
+  { name: 'Филиалы', href: '/home/departments', icon: BuildingOffice2Icon },
+  { name: 'Журнал операций', href: '/home/operations', icon: UserGroupIcon },
+  { name: 'Отчеты', href: '/home/reports', icon: UserGroupIcon },
+  // { name: 'Залоги', href: '/home/guatartees', icon: UserGroupIcon },
+  // { name: 'Сотрудники', href: '/home/employees', icon: UserGroupIcon },
+  // { name: 'Продукты', href: '/home/products', icon: UserGroupIcon },
+  // { name: 'Таблицы БД', href: '/home/tables', icon: UserGroupIcon },
+  // { name: 'Академия', href: '/home/academy', icon: UserGroupIcon },
+  // { name: 'Настройки', href: '/home/settings', icon: UserGroupIcon },
 ];
 
 export default function NavLinks() {
+  const { setTitle } = useContext(TitleContext);
+
   const pathname = usePathname();
+
+  function handleClick(title: string) {
+    setTitle(title);
+  }
 
   return (
     <>
@@ -40,13 +45,14 @@ export default function NavLinks() {
         return (
           <Link
             key={link.name}
-            href={`/home${link.href}`}
+            href={`${link.href}`}
             // href={link.href}
 
             className={clsx(
               ' flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-white/[0.05] p-3 text-sm font-medium hover:bg-white/[0.2] md:flex-none md:justify-start md:p-2 md:px-3',
-              { ' bg-white/[0.2]': pathname === `/home${link.href}` },
+              { ' bg-white/[0.2]': pathname === `${link.href}` },
             )}
+            onClick={() => handleClick(link.name)}
           >
             <LinkIcon className="w-6" />
             <p className="hidden md:block">{link.name}</p>
