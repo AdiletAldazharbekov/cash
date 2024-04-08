@@ -29,7 +29,8 @@
     ".next/types/**/*.ts",
     "app/lib/placeholder-data.js",
     "scripts/seed.js",
-    "app/context/TitleContext.js"
+    "app/_context/TitleContext.js",
+    "app/palet/page.tsx"
   ],
   "exclude": ["node_modules"]
 }

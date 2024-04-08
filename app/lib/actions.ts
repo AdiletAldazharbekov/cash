@@ -114,22 +114,26 @@ export async function deleteInvoice(id: string) {
   }
 }
 
+// Действие Аутентификация
+
 import { signIn } from '@/auth';
 import { AuthError } from 'next-auth';
-
-// ...
-
+// Это действие должно импортировать функцию signIn из auth.ts:
 export async function authenticate(
   prevState: string | undefined,
   formData: FormData,
 ) {
   try {
+    //signIn проверяет учетные данные на соответствие сохраненным данным пользователя.
     await signIn('credentials', formData);
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {
+        // Если возникнет ошибка 'CredentialsSignin', показать соответствующее сообщение об ошибке.
+        // Есть различные кейсы ошибок NextAuth.js в документации.
         case 'CredentialsSignin':
           return 'Invalid credentials.';
+        // Если возникнет другая ошибка, показать дефорлное сообщение об ошибке.
         default:
           return 'Something went wrong.';
       }
@@ -137,3 +141,20 @@ export async function authenticate(
     throw error;
   }
 }
+
+
+// import { getSession } from 'next-auth/client'
+ 
+// export async function serverAction() {
+//   const session = await getSession()
+//   const userRole = session?.user?.role
+ 
+  // Проверка, авторизован ли пользователь для выполнения действия
+  // if (userRole !== 'admin') {
+  //   throw new Error('Unauthorized access: User does not have admin privileges.')
+  // }
+ 
+  // Продолжить выполнение действия для авторизованных пользователей
+  // ... реализация действия
+// }
+

@@ -22,6 +22,7 @@ export default function Sidebar() {
           action={async () => {
             'use server';
             await signOut();
+              // cookies().delete('AUTH_TOKEN');
           }}
         >
           <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-inherit p-3 text-sm font-medium hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3">

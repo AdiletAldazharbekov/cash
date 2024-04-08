@@ -13,7 +13,8 @@ const config: Config = {
       },
       colors: {
         sky: {
-          1000: '#0D2E4E',
+          1000: '#3D5A80',
+          // 1000:'3D5A80'0D2E4E
         },
       },
     },

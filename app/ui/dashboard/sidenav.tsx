@@ -20,7 +20,9 @@ export default function SideNav() {
         <div className="hidden h-auto w-full grow rounded-md bg-white/[0.05] md:block"></div>
         <form
           action={async () => {
+            //функция выхода из системы используем на сервере
             'use server';
+            // готовая функция signOut
             await signOut();
           }}
         >

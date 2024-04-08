@@ -1,6 +1,6 @@
 'use client';
 
-import { lusitana, montserrat } from '@/app/ui/fonts';
+import { montserrat } from '@/app/ui/fonts';
 import {
   AtSymbolIcon,
   KeyIcon,
