@@ -132,29 +132,27 @@ export async function authenticate(
         // Если возникнет ошибка 'CredentialsSignin', показать соответствующее сообщение об ошибке.
         // Есть различные кейсы ошибок NextAuth.js в документации.
         case 'CredentialsSignin':
-          return 'Invalid credentials.';
+          return 'Не верный логин или пароль!';
         // Если возникнет другая ошибка, показать дефорлное сообщение об ошибке.
         default:
-          return 'Something went wrong.';
+          return 'Что то пошло не так!';
       }
     }
     throw error;
   }
 }
 
-
 // import { getSession } from 'next-auth/client'
- 
+
 // export async function serverAction() {
 //   const session = await getSession()
 //   const userRole = session?.user?.role
- 
-  // Проверка, авторизован ли пользователь для выполнения действия
-  // if (userRole !== 'admin') {
-  //   throw new Error('Unauthorized access: User does not have admin privileges.')
-  // }
- 
-  // Продолжить выполнение действия для авторизованных пользователей
-  // ... реализация действия
+
+// Проверка, авторизован ли пользователь для выполнения действия
+// if (userRole !== 'admin') {
+//   throw new Error('Unauthorized access: User does not have admin privileges.')
 // }
 
+// Продолжить выполнение действия для авторизованных пользователей
+// ... реализация действия
+// }

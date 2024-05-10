@@ -27,7 +27,7 @@ export default async function Page({
 
   return (
     <div className="flex w-full flex-col">
-      <Title /> test
+      <Title />
       <div className="flex h-10 items-center justify-between gap-2  px-6 py-2">
         <Search placeholder="Поиск кредитов..." />
         <CreateInvoice />
