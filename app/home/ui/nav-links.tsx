@@ -49,8 +49,8 @@ export default function NavLinks() {
             // href={link.href}
 
             className={clsx(
-              ' flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-white/[0.05] p-3 text-sm font-medium hover:bg-white/[0.2] md:flex-none md:justify-start md:p-2 md:px-3',
-              { ' bg-white/[0.2]': pathname === `${link.href}` },
+              ' hover:bg-sky-980 flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-sky-990 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3',
+              { ' bg-sky-55': pathname === `${link.href}` },
             )}
             onClick={() => handleClick(link.name)}
           >

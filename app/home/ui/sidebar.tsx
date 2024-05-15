@@ -8,7 +8,7 @@ export default function Sidebar() {
   return (
     <div className="flex h-full flex-col px-3 py-0 pb-4 md:px-1">
       <Link
-        className="my-1 flex h-20 items-center justify-center rounded-md  bg-white/[0.05] md:h-32"
+        className="my-1 flex h-20 items-center justify-center rounded-md  bg-sky-990 md:h-32"
         href="/"
       >
         <div className="w-16 text-white md:w-32">
