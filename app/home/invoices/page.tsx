@@ -28,14 +28,14 @@ export default async function Page({
   return (
     <div className="flex w-full flex-col">
       <Title />
-      <div className="flex h-10 items-center justify-between gap-2  px-6 py-2">
+      <div className="bg-red-800 flex h-10 items-center justify-between gap-2  px-6 py-2">
         <Search placeholder="Поиск кредитов..." />
         <CreateInvoice />
       </div>
       <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
         <Table query={query} currentPage={currentPage} />
       </Suspense>
-      <div className="mt-5 flex w-full justify-center">
+      <div className="bg-red-400 mt-5 flex w-full justify-center">
         <Pagination totalPages={totalPages} />
       </div>
     </div>

@@ -8,8 +8,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Sidebar />
       </div>
       <div className="dark bg-sky-1000 md:p-0 md:pr-3">
-        <div className="px-6 leading-[4rem]">Header</div>
-        <div className="flex h-full flex-col rounded-t-2xl bg-white text-sky-1000 md:rounded-ee-[2.5rem]">
+        <div className="px-4 leading-[4rem]">Header</div>
+        <div className="flex h-full flex-col rounded-t-2xl bg-white p-2 text-sky-1000 md:rounded-ee-[2.5rem]">
           {children}
         </div>
       </div>
