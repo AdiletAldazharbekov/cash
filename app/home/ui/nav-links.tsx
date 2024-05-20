@@ -48,7 +48,7 @@ export default function NavLinks() {
             href={`${link.href}`}
             className={clsx(
               'flex h-[48px] grow items-center justify-center gap-3 rounded-md bg-sky-990 p-3 text-sm font-medium hover:bg-sky-980 md:flex-none md:justify-start md:p-2 md:px-3',
-              { 'md:bg-sky-550 hover:bg-sky-550': pathname === link.href },
+              { 'md:bg-sky-550 md:hover:bg-sky-550': pathname === link.href },
             )}
             onClick={() => handleClick(link.name)}
           >

@@ -1,38 +1,27 @@
 import { Metadata } from 'next';
-import Title from '../ui/Title';
+import ContentPageTempl from '../ui/ContentPageTempl';
 
 export const metadata: Metadata = {
   title: 'Deps',
 };
 
 export default function Page() {
-  // const session = await getSession()
-  // const userRole = session?.user?.role // Assuming 'role' is part of the session object
   const userRole: string = 'admin';
 
-  if (userRole === 'admin') {
-    // Component for admin users
-    return (
-      <div className="flex w-full flex-col">
-        <Title />
-        Admin
-      </div>
-    );
-  } else if (userRole === 'user') {
-    // Component for regular users
-    return (
-      <div className="flex w-full flex-col">
-        <Title />
-        User
-      </div>
-    );
-  } else {
-    // Component shown for unauthorized access
-    return (
-      <div className="flex w-full flex-col">
-        <Title />
-        Default
-      </div>
-    );
-  }
+  const renderContent = () => {
+    switch (userRole) {
+      case 'admin':
+        return <ContentPageTempl />;
+      case 'user':
+        return 'User Page';
+      default:
+        return 'Default page';
+    }
+  };
+  
+  return (
+    <div className="flex h-full w-full flex-col p-2">
+      {renderContent()}
+    </div>
+  );
 }
