@@ -16,6 +16,7 @@ import { TitleContext } from '@/app/context/TitleContext.js';
 // Depending on the size of the application, this would be stored in a database.
 export const links = [
   { name: 'Главная', href: '/home', icon: HomeIcon },
+  { name: 'Dashboard', href: '/home/dashboard', icon: HomeIcon },
   { name: 'Клиенты', href: '/home/customers', icon: UserGroupIcon },
   { name: 'Кредиты', href: '/home/invoices', icon: DocumentDuplicateIcon },
   { name: 'Филиалы', href: '/home/departments', icon: BuildingOffice2Icon },

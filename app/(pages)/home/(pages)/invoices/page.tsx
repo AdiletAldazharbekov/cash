@@ -1,13 +1,13 @@
-import Pagination from '@/app/ui/invoices/pagination';
-import Search from '@/app/ui/search';
-import Table from '@/app/ui/invoices/table';
-import { CreateInvoice } from '@/app/ui/invoices/buttons';
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
 
 import { Metadata } from 'next';
 import Title from '../../ui/Title';
+import Search from './ui/search';
+import { CreateInvoice } from './ui/buttons';
+import Table from './ui/table';
+import Pagination from './ui/pagination';
 
 export const metadata: Metadata = {
   title: 'Loans',
@@ -32,7 +32,7 @@ export default async function Page({
         <Search placeholder="Поиск кредитов..." />
         <CreateInvoice />
       </div>
-      <div className="flex grow flex-col gap-2 pt-4 md:h-full">
+      <div className="flex max-h-[77%] grow flex-col gap-2 overflow-auto pt-4 md:h-full">
         <Suspense
           key={query + currentPage}
           fallback={<InvoicesTableSkeleton />}
