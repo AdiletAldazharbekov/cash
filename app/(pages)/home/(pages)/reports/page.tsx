@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
-import ContentPageTempl from '../ui/ContentPageTempl';
-// import { links } from '@/app/ui/dashboard/nav-links';
+import ContentPageTempl from '../../ui/ContentPageTempl';
+
 export const metadata: Metadata = {
-  title: 'Clients',
+  title: 'Report',
 };
 
 export default function Page() {

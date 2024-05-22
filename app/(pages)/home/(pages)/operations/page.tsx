@@ -1,9 +1,8 @@
 import { Metadata } from 'next';
-import Title from '../ui/Title';
-import ContentPageTempl from '../ui/ContentPageTempl';
+import ContentPageTempl from '../../ui/ContentPageTempl';
 
 export const metadata: Metadata = {
-  title: 'Report',
+  title: 'Operations',
 };
 
 export default function Page() {

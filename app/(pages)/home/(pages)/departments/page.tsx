@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import ContentPageTempl from '../ui/ContentPageTempl';
+import ContentPageTempl from '../../ui/ContentPageTempl';
 
 export const metadata: Metadata = {
   title: 'Deps',

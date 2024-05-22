@@ -1,4 +1,3 @@
-import { montserrat } from '@/app/ui/fonts';
 import { Metadata } from 'next';
 // import { links } from '@/app/ui/dashboard/nav-links';
 export const metadata: Metadata = {
@@ -14,10 +13,3 @@ export default function Page() {
     </div>
   );
 }
-
-// color: #0D2E4E;
-// font-family: Montserrat;
-// font-size: 24px;
-// font-style: normal;
-// font-weight: 600;
-// line-height: normal;

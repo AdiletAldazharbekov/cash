@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
 
 import { Metadata } from 'next';
-import Title from '../ui/Title';
+import Title from '../../ui/Title';
 
 export const metadata: Metadata = {
   title: 'Loans',
@@ -26,17 +26,22 @@ export default async function Page({
   const totalPages = await fetchInvoicesPages(query);
 
   return (
-    <div className="flex w-full flex-col">
+    <div className="flex h-full w-full flex-col p-2">
       <Title />
-      <div className="bg-red-800 flex h-10 items-center justify-between gap-2  px-6 py-2">
+      <div className="flex h-12 items-center justify-between  gap-2">
         <Search placeholder="Поиск кредитов..." />
         <CreateInvoice />
       </div>
-      <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
-        <Table query={query} currentPage={currentPage} />
-      </Suspense>
-      <div className="bg-red-400 mt-5 flex w-full justify-center">
-        <Pagination totalPages={totalPages} />
+      <div className="flex grow flex-col gap-2 pt-4 md:h-full">
+        <Suspense
+          key={query + currentPage}
+          fallback={<InvoicesTableSkeleton />}
+        >
+          <Table query={query} currentPage={currentPage} />
+        </Suspense>
+        <div className="mt-4 flex w-full justify-center">
+          <Pagination totalPages={totalPages} />
+        </div>
       </div>
     </div>
   );

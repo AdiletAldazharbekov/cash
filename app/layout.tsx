@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: '%s | AFinA',
     default: 'AFinA',
   },
-  description: 'Демо версия приложения для учета кредитов в Ломбардах',
+  description: 'Демо версия приложения для учета финансов',
 };
 
 export default function RootLayout({
