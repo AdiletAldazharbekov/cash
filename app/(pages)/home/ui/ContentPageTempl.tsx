@@ -6,7 +6,7 @@ export default function Page() {
   const { title } = useContext(TitleContext);
 
   const lines = Array.from(
-    { length: 100 },
+    { length: 20 },
     (_, i) => `Это строка номер ${i + 1} - страницы ${title}`,
   );
 
@@ -18,7 +18,7 @@ export default function Page() {
       <div className="flex h-12 items-center justify-between  gap-2 bg-gray-200">
         Header {title}
       </div>
-      <div className="flex max-h-[77%] grow flex-col gap-2 overflow-auto bg-gray-300 pt-4 md:h-full">
+      <div className="flex max-h-[84%] grow flex-col gap-2 overflow-auto bg-gray-300 pt-4 md:h-full">
         {lines.map((line, index) => (
           <p key={index}>{line}</p>
         ))}
@@ -26,5 +26,3 @@ export default function Page() {
     </>
   );
 }
-
-// "overflow-auto" style={{ maxHeight: '80vh' }}

@@ -18,10 +18,6 @@ export default function Page() {
         return 'Default page';
     }
   };
-  
-  return (
-    <div className="flex h-full w-full flex-col p-2">
-      {renderContent()}
-    </div>
-  );
+
+  return <>{renderContent()}</>;
 }

@@ -11,12 +11,12 @@ import Title from '../../ui/Title';
 
 export default async function Page() {
   return (
-    <div className="flex h-full w-full flex-col p-2">
+    <>
       <Title />
       <div className="flex h-12 items-center justify-between  gap-2">
         Header
       </div>
-      <div className="flex max-h-[77%] grow flex-col gap-2 overflow-auto pt-4 md:h-full">
+      <div className="flex max-h-[84%] grow flex-col gap-2 overflow-auto pt-4 md:h-full">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <Suspense fallback={<CardsSkeleton />}>
             <CardWrapper />
@@ -31,6 +31,6 @@ export default async function Page() {
           </Suspense>
         </div>
       </div>
-    </div>
+    </>
   );
 }

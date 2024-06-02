@@ -26,13 +26,13 @@ export default async function Page({
   const totalPages = await fetchInvoicesPages(query);
 
   return (
-    <div className="flex h-full w-full flex-col p-2">
+    <>
       <Title />
       <div className="flex h-12 items-center justify-between  gap-2">
         <Search placeholder="Поиск кредитов..." />
         <CreateInvoice />
       </div>
-      <div className="flex max-h-[77%] grow flex-col gap-2 overflow-auto pt-4 md:h-full">
+      <div className="flex max-h-[84%] grow flex-col gap-2 overflow-auto pt-4 md:h-full">
         <Suspense
           key={query + currentPage}
           fallback={<InvoicesTableSkeleton />}
@@ -43,6 +43,6 @@ export default async function Page({
           <Pagination totalPages={totalPages} />
         </div>
       </div>
-    </div>
+    </>
   );
 }
