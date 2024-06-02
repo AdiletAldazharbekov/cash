@@ -1,12 +1,12 @@
 import Pagination from '@/app/(pages)/home/(pages)/invoices/ui/pagination';
-import Search from '@/app/ui/search';
-import Table from '@/app/ui/invoices/table';
-import { CreateInvoice } from '@/app/ui/invoices/buttons';
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
 
 import { Metadata } from 'next';
+import { CreateInvoice } from '../../home/(pages)/invoices/ui/buttons';
+import Table from '../../home/(pages)/invoices/ui/table';
+import Search from '../../home/(pages)/invoices/ui/search';
 
 export const metadata: Metadata = {
   title: 'Loans',
