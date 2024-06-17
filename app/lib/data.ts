@@ -2,7 +2,6 @@
 
 import { sql } from '@vercel/postgres';
 import {
-  CustomerField,
   CustomersTableType,
   InvoiceForm,
   InvoicesTable,
@@ -85,7 +84,6 @@ export async function fetchCardData() {
     const totalPendingInvoices = formatCurrency(data[2].rows[0].pending ?? '0');
     // console.log(numberOfInvoices);
 
-
     return {
       numberOfCustomers,
       numberOfInvoices,
@@ -150,7 +148,6 @@ export async function fetchInvoicesPages(query: string) {
       invoices.date::text ILIKE ${`%${query}%`} OR
       invoices.status ILIKE ${`%${query}%`}
   `;
-
     const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
     return totalPages;
   } catch (error) {
@@ -184,26 +181,6 @@ export async function fetchInvoiceById(id: string) {
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch invoice.');
-  }
-}
-
-export async function fetchCustomers() {
-  // noStore();
-
-  try {
-    const data = await sql<CustomerField>`
-      SELECT
-        id,
-        name
-      FROM customers
-      ORDER BY name ASC
-    `;
-
-    const customers = data.rows;
-    return customers;
-  } catch (err) {
-    console.error('Database Error:', err);
-    throw new Error('Failed to fetch all customers.');
   }
 }
 
@@ -253,5 +230,3 @@ export async function getUser(email: string) {
     throw new Error('Failed to fetch user.');
   }
 }
-
-

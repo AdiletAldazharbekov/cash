@@ -1,17 +1,11 @@
-import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
+import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { fetchInvoicesPages } from '@/app/lib/data';
 
-import { Metadata } from 'next';
-import Title from '../../ui/Title';
 import Search from './ui/search';
 import { CreateInvoice } from './ui/buttons';
 import Table from './ui/table';
 import Pagination from './ui/pagination';
-
-export const metadata: Metadata = {
-  title: 'Loans',
-};
 
 export default async function Page({
   searchParams,
@@ -27,7 +21,9 @@ export default async function Page({
 
   return (
     <>
-      <Title />
+      <div className="flex h-14 items-center justify-between">
+        <h1 className="text-2xl font-semibold text-sky-1000">Invoices</h1>
+      </div>
       <div className="flex h-12 items-center justify-between  gap-2">
         <Search placeholder="Поиск кредитов..." />
         <CreateInvoice />

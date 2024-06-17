@@ -1,5 +1,5 @@
 'use client';
-import { TitleContext } from '@/app/context/TitleContext';
+import { TitleContext } from '@/app/_app/TitleContext';
 import React, { useContext } from 'react';
 
 export default function Page() {

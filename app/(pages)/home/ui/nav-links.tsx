@@ -10,18 +10,18 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
 import { useContext } from 'react';
-import { TitleContext } from '@/app/context/TitleContext.js';
+import { TitleContext } from '@/app/_app/TitleContext.js';
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 export const links = [
   { name: 'Главная', href: '/home', icon: HomeIcon },
-  { name: 'Dashboard', href: '/home/dashboard', icon: HomeIcon },
+  // { name: 'Dashboard', href: '/home/dashboard', icon: HomeIcon },
   { name: 'Клиенты', href: '/home/customers', icon: UserGroupIcon },
   { name: 'Кредиты', href: '/home/invoices', icon: DocumentDuplicateIcon },
-  { name: 'Филиалы', href: '/home/departments', icon: BuildingOffice2Icon },
-  { name: 'Журнал операций', href: '/home/operations', icon: UserGroupIcon },
-  { name: 'Отчеты', href: '/home/reports', icon: UserGroupIcon },
+  // { name: 'Филиалы', href: '/home/departments', icon: BuildingOffice2Icon },
+  // { name: 'Журнал операций', href: '/home/operations', icon: UserGroupIcon },
+  // { name: 'Отчеты', href: '/home/reports', icon: UserGroupIcon },
   // { name: 'Залоги', href: '/home/guatartees', icon: UserGroupIcon },
   // { name: 'Сотрудники', href: '/home/employees', icon: UserGroupIcon },
   // { name: 'Продукты', href: '/home/products', icon: UserGroupIcon },

@@ -1,20 +1,43 @@
-'use client';
-import { TitleContext } from '@/app/context/TitleContext';
-import { useContext } from 'react';
+import { Suspense } from 'react';
 
-export default function Page() {
-  const { title } = useContext(TitleContext);
+import { InvoicesTableSkeleton } from './ui/skeletons';
+import Search from './ui/search';
+import { CreateCustomer } from './ui/buttons';
+import Table from './ui/table';
+import Pagination from './ui/pagination';
+import { fetchCustomersPages } from '@/app/_entities/customer/api';
+
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) {
+  const query = searchParams?.query || '';
+  const currentPage = Number(searchParams?.page) || 1;
+  const totalPages = await fetchCustomersPages(query);
 
   return (
     <>
-      <div className="flex h-14 items-center justify-between bg-gray-100">
-        <h1 className="text-2xl font-semibold text-sky-1000">{title}</h1>
+      <div className="flex h-14 items-center justify-between">
+        <h1 className="text-2xl font-semibold text-sky-1000">Клиенты</h1>
       </div>
-      <div className="flex h-12 items-center justify-between  gap-2 bg-gray-200">
-        Header {title}
+      <div className="flex h-12 items-center justify-between  gap-2">
+        <Search placeholder="Поиск клиента..." />
+        <CreateCustomer />
       </div>
-      <div className="flex max-h-[84%] grow flex-col gap-2 overflow-auto bg-gray-300 pt-4 md:h-full">
-        Hello
+      <div className="flex max-h-[84%] grow flex-col gap-2 overflow-auto pt-4 md:h-full">
+        <Suspense
+          key={query + currentPage}
+          fallback={<InvoicesTableSkeleton />}
+        >
+          <Table query={query} currentPage={currentPage} />
+        </Suspense>
+        <div className="mt-4 flex w-full justify-center">
+          <Pagination totalPages={totalPages} />
+        </div>
       </div>
     </>
   );
