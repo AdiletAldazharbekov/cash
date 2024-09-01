@@ -1,5 +1,5 @@
 import { GlobeAltIcon } from '@heroicons/react/24/outline';
-import { lusitana, montserrat } from '@/app/ui/fonts';
+import { montserrat } from '../_app/fonts';
 
 export default function Logo() {
   return (

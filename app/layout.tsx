@@ -1,8 +1,8 @@
 import '@/app/ui/global.css';
-import { montserrat } from '@/app/ui/fonts';
 
 import { Metadata } from 'next';
 import { TitleProvider } from './_app/TitleContext';
+import { montserrat } from './_app/fonts';
 
 export const metadata: Metadata = {
   title: {

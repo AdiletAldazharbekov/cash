@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
+import { InvoicesTableSkeleton } from '@/app/_shared/skeletons';
 import { fetchInvoicesPages } from '@/app/lib/data';
 
 import Search from './ui/search';

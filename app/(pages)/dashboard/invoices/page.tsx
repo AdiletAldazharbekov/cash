@@ -1,5 +1,5 @@
 import Pagination from '@/app/(pages)/home/(pages)/invoices/ui/pagination';
-import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
+import { InvoicesTableSkeleton } from '@/app/_shared/skeletons';
 import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
 

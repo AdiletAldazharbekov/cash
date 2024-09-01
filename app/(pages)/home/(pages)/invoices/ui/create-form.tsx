@@ -10,7 +10,7 @@ import {
   CurrencyDollarIcon,
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
-import { Button } from '@/app/ui/button';
+import { Button } from '@/app/_shared/button';
 import { createInvoice } from '@/app/lib/actions';
 import { Customer } from '../../customers/lib/definitions';
 
