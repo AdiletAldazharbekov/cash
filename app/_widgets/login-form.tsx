@@ -1,8 +1,7 @@
 'use client';
 
-import { AtSymbolIcon, KeyIcon } from '@heroicons/react/24/outline';
+import { AtSymbolIcon, KeyIcon, EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
-import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 
 import { useFormState, useFormStatus } from 'react-dom';
 import { authenticate } from '@/app/lib/actions';
