@@ -8,7 +8,7 @@ export default function Page() {
             className="text-gray-950 hover:text-gray-500"
             target="_blank"
           >
-            Aldazharbekov Adilet
+            Aldazharbekov Adi
           </a>
         </div>
         <div className="flex grow items-center justify-end gap-6 pr-6 text-sm">
