@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import NavLinks from './nav-links';
 import Logo from '@/app/_shared/logo';
 import { PowerIcon } from '@heroicons/react/24/outline';

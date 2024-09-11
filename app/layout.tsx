@@ -2,14 +2,14 @@ import '@/app/ui/global.css';
 
 import { Metadata } from 'next';
 import { TitleProvider } from './_app/TitleContext';
-import { montserrat } from './_app/fonts';
+import { openSans } from './_app/fonts';
 
 export const metadata: Metadata = {
   title: {
     template: '%s | AFinA',
     default: 'AFinA',
   },
-  description: 'Демо версия приложения для учета финансов',
+  description: 'Приложение для учета различных операций',
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} antialiased`}>
+      <body className={`${openSans.className} antialiased`}>
         <TitleProvider>{children}</TitleProvider>
       </body>
     </html>

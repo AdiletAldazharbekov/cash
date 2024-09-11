@@ -8,7 +8,7 @@ export default function Page() {
             className="text-gray-950 hover:text-gray-500"
             target="_blank"
           >
-            Aldazharbekov Adi
+            Linkedin
           </a>
         </div>
         <div className="flex grow items-center justify-end gap-6 pr-6 text-sm">
@@ -28,9 +28,9 @@ export default function Page() {
         </div>
       </div>
       <div className="flex w-full flex-grow-[1] flex-col items-center justify-center text-2xl">
-        New project
+        My project
       </div>
-      <div className="flex w-full">
+      {/* <div className="flex w-full">
         <div className="min-w-[40px] flex-grow-[1] cursor-pointer bg-blue-200 text-center duration-500 ease-out hover:flex-grow-[4]">
           1
         </div>
@@ -46,7 +46,7 @@ export default function Page() {
         <div className="min-w-[40px] flex-grow-[1] cursor-pointer bg-sky-1000 text-center duration-500 ease-out hover:flex-grow-[4]">
           5
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }
